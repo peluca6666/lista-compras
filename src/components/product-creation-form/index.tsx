@@ -54,7 +54,7 @@ const ProductCreationForm: React.FC<{ shop: IShop }> = ({ shop }) => {
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-                <Button variant={"outline"}>Agregar producto</Button>
+                <Button variant={"ghost"} className="border border-dashed">Agregar producto</Button>
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
@@ -63,7 +63,7 @@ const ProductCreationForm: React.FC<{ shop: IShop }> = ({ shop }) => {
                 <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
                     <Input type="text" name="name" placeholder="Nombre del producto" value={form.name} onChange={handleChange} />
                     <Input type="text" name="image" placeholder="Imágen del producto (URL)" value={form.image} onChange={handleChange} />
-                    <Textarea className="resize-none" name="description" placeholder="Descripción de la tienda" value={form.description} onChange={handleChange}></Textarea>
+                    <Textarea className="resize-none" name="description" placeholder="Descripción del producto" value={form.description} onChange={handleChange}></Textarea>
                     <Input type="text" name="price" placeholder="Precio" value={form.price} onChange={handleChange} />
                     <Input type="text" name="quantity" placeholder="Cantidad" value={form.quantity} onChange={handleChange} />
                     <Button type="submit">Guardar</Button>
