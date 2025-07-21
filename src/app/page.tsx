@@ -15,6 +15,7 @@ export default function Home() {
 
   const handleSelectShop = (data: IShop) => {
     setShopId(data.id === shopId ? null : data.id)
+    
   }
 
   return (
