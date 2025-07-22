@@ -123,7 +123,7 @@ const ProductCreationForm: React.FC<{ shop: IShop }> = ({ shop }) => {
         setIsSubmitting(true)
         
         try {
-            // Simular delay de API
+            // Simular delay de API de 500ms para mostrar el loader
             await new Promise(resolve => setTimeout(resolve, 500))
             
             dispatch(addProduct({

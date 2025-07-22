@@ -1,13 +1,11 @@
 "use client"
 
-import ProductCreationForm from "@/components/product-creation-form";
 import ProductList from "@/components/product-list";
 import ShopCreationForm from "@/components/shop-creation-form";
 import ShopItem from "@/components/shop-item";
-import { Card, CardContent } from "@/components/ui/card";
 import IShop from "@/interfaces/Shop.interface";
 import { useAppSelector } from "@/store";
-import { use, useEffect, useState } from "react";
+import {  useState } from "react";
 
 export default function Home() {
   const [shopId, setShopId] = useState<number | null>(null)

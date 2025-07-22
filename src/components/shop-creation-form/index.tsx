@@ -75,7 +75,7 @@ const ShopCreationForm = () => {
         setIsSubmitting(true)
         
         try {
-            // Simular delay de API (opcional, para mejor UX)
+            // Simular delay de API de 500ms para mostrar el loader
             await new Promise(resolve => setTimeout(resolve, 500))
             
             dispatch(addShop({
