@@ -8,6 +8,7 @@ import { Button } from "../ui/button"
 import { Edit3, Minus, Plus, X, Package } from "lucide-react"
 import { useAppDispatch } from "@/store"
 import { updateProductQuantity, removeProduct } from "@/store/features/shopsSlice"
+import ProductEditForm from "../product-edit-form/ProductEditForm" 
 
 const format = (number: number, options?: Intl.NumberFormatOptions): string => {
     return new Intl.NumberFormat("es-AR", {
@@ -191,18 +192,25 @@ const ProductItem: React.FC<ProductItemProps> = ({ data, shopId }) => {
                     </div>
                 </div>
 
-                {/* Botón eliminar */}
-                <Button
-                    size="sm"
-                    variant="ghost"
-                    onClick={handleRemove}
-                    className="h-10 w-10 p-0 text-gray-400 hover:text-red-500 hover:bg-red-50 opacity-0 group-hover:opacity-100 transition-all duration-200"
-                >
-                    <X className="w-4 h-4" />
-                </Button>
+                {/* Botones de acción */}
+                <div className="flex items-center gap-1">
+                    {/* Botón editar producto completo */}
+                    <ProductEditForm product={data} shopId={shopId} />
+                    
+                    {/* Botón eliminar */}
+                    <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={handleRemove}
+                        className="h-10 w-10 p-0 text-gray-400 hover:text-red-500 hover:bg-red-50 opacity-0 group-hover:opacity-100 transition-all duration-200"
+                        title="Eliminar producto"
+                    >
+                        <X className="w-4 h-4" />
+                    </Button>
+                </div>
             </div>
 
-            {/* Línea de progreso visual (opcional) */}
+            {/* Línea de progreso visual*/}
             <div className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
         </div>
     )
